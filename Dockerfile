@@ -1,10 +1,10 @@
-FROM node:alpine
-
+FROM node:alpine as builder
 WORKDIR /apps
-
 COPY package.json .
 RUN npm i
+COPY . .
+RUN npm run build
 
-COPY ./ ./
-
-CMD ["npm", "run", "start"]	
+FROM nginx
+EXPOSE 80
+COPY --from=builder /apps/build /usr/share/nginx/html
