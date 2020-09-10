@@ -16,7 +16,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-517503597657"
   bucket_path: "travis-test"
   on:
-	branch: master
+    branch: master
   access_key_id: $ACCESS_KEY
   secret_access_key: $ACCESS_SECRET
 
