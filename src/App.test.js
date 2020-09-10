@@ -7,9 +7,3 @@ test('renders learn react link', () => {
   const linkElement = getByText(/count/i);
   expect(linkElement).toBeInTheDocument();
 });
-
-test('incorrect', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/count/i);
-  expect(linkElement).toBeInTheDocument();
-});
